@@ -1,0 +1,139 @@
+#include <stdio.h>
+
+struct SHuman{
+    char name[12];
+    int age;
+    double height;
+    
+};
+
+int main(){
+    struct SHuman lee;
+    printf("%d\n",sizeof(lee)); //
+}
+
+int main(){
+    struct SHuman kim = {"김상형", 29, 181.4};
+    lee = kim;  //구조체 변수는 대입이 가능함
+    printf("%s: %d세, 키 %.2f\n",lee.name,lee.age,lee.height);
+}
+
+void outHuman(struct SHuman some){
+    printf("%s: %d세, 키 %.2f\n",some.name,some.age, some.height);
+    some.age = 49;
+}
+int main(){
+     struct SHuman kim = {"김상형", 29, 181.4}, lee;
+     outHuman(kim);
+     printf("%s: %d세, 키 %.2f\n",kim.name,kim.age,kim.height);
+} //대입 가능하다는 것은 곧 구조체를 함수의 인수로 전달 할 수 있다는 뜻
+//outHuman 함수는 SHuman 구조체를 통째로 전달받아 정보를 출력
+
+
+
+
+
+
+
+
+//문제!
+//좌표 x,y를 나타내는 구조체 태그 선언
+//구조체 변수를 선언하고 초기값을 각각 {4,0}과 {0,3}으로 지정
+//각 변수의 x,y 좌표값을 출력
+
+struct Vector{
+    int x,y;
+};
+
+int main(){
+    struct Vector a = {4,0};
+    struct Vector b = {0,3};
+    printf("{%d,%d}\n",a.x,a.y);
+    printf("{%d,%d}\n",b.x,b.y);
+}
+
+//구조체 변수 C를 선언
+//두 Vector 구조체를 인수로 받아 x,y각 좌표끼리 더한 Vector구조체를 return하는
+//~addVector(~) 함수를 정의
+//addVector 함수를 호출하여 C에 A,B를 더한 값을 대입
+//C의 X,Y값을 출력
+struct Vector addVector(struct Vector v1, struct Vector v2){
+    struct Vector c;
+    c.x = v1.x + v2.x;
+    c.y = v1.y + v2.y ;
+    return c ;
+}
+
+
+int main(){
+    struct Vector a = {4,0}, b = {0,3}, c;
+    c = addVector(a,b);
+    printf("{%d,%d}\n",c.x,c.y);
+}
+
+
+
+
+
+
+//분, 초를 나타내는 mytime 구조체 태그를 선언
+//mytime 구조체 변수 a,b를 선언
+//두 개의 시간을 각 구조체 변수에 입력받음
+//두 시간의 차이를 반환하는 difftime 함수 정의
+//difftime 함수를 이용하여 두 시간의 차이를 얻음
+//두 시간의 차이를 출력
+//내풀이
+struct mytime{int min,sec;};
+struct mytime diffetime(struct mytime ti1, struct mytime ti2){
+    struct mytime result;
+    ti1.sec += ti1.min * 60;
+    ti2.sec += ti2.min * 60;
+    int cha = abs(ti1.sec - ti2.sec);
+    result.min = cha / 60; 
+    result.sec = cha % 60;
+    return result;
+}
+
+
+int main(){
+    struct mytime t1, t2,result;
+    
+    printf("시작시간 (분, 초) :");
+    scanf("%d %d", &t1.min, &t1.sec);
+    printf("종료시간 (분, 초) : ");
+    scanf("%d %d", &t2.min, &t2. sec);
+    result = diffetime(t1,t2);
+    printf("%d %d",result.min,result.sec);
+}
+//교수님
+struct mytime ( int min, sec; };
+struct mytime diffTime(struct mytime start, struct mytime end) f
+struct mytime diff;
+int diffInSec = (end.min - start.min) * 60 + (end. sec - start. sec);
+diff.min = diffInSec / 60;
+diff.sec = diffInSec % 60;
+return diff;
+}
+int main() {
+struct mytime a, b, c;
+printf("시작시간 (분, 초) :
+");
+scanf("%d %d"
+, &a.min, &a.sec);
+printf("종료시간 (분, 초) : "):
+scanf("%d %d"
+, &b.min, &b. sec);
+c = diffTime(a, b);
+printf("소요시간 %0분 ※초1n"
+, c.min, c.sec);
+
+
+
+
+//이름(문자열,크기20)나이(정수) 멤버를 가지는 구조체 person 선언
+//3개의 원소를가지는 구조체 person 배열 선언
+//각 사람의 이름, 나이를 scanf로 입력받음 for 이용
+//모든 사람의 이름, 나이를 출력, for 이용
+//이름을 입력받아 배열에서 해당 이름을 가지는 사람의 나이를 출력
+
+
