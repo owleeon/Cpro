@@ -1,0 +1,118 @@
+#include<stdio.h>
+
+int GetSum(int from, int to){
+    int sum = 0;
+    for (int i =from;i <= to; i++){
+        sum += i;
+        
+    }
+    return sum;
+}
+
+
+int main(){
+    printf("1~10 = %d\n",GetSum(1,10));
+    printf("11~20 = %d\n",GetSum(11,20));
+    
+    int form=1, to =100, sum;
+    sum = GetSum(from,to);   //실인수 (**시험 출제**)
+    printf("%d\n",sum)
+}
+
+
+int GetSum(int from, int to){
+    int sum = 0;
+    if(from <= 12){
+        for(int i = from; i <= to; i ++){
+            sum += 1
+        }
+    }
+    
+}
+
+
+//실수
+#include <math.h>
+double distance(double x1, double y1, double x1, double y2){
+    return sqrt(((x1-x2)^2+(y1-y2)^2)^(1/2))
+    
+}
+int main(){
+    printf("%f\n",2,2,3,2);
+}
+
+long long factorial(int n){
+    long long fact =1;
+    for (int i =1; i <= n;i++){
+        fact *= i
+    }
+    return fact;
+    
+}
+int main(){
+    
+    printf("%lld\n",fact);
+}
+
+double larger(int j1,int j2){
+    if (j1 > j2)
+        return j1;
+    else if (j2 > j1)
+        return j2;
+    else
+        printf("값이 같음");
+}
+
+int main(){
+    double a,b;
+    printf("실수:"); scanf("%lf",&a);
+    printf("실수:"); scanf("%lf",&b);
+    printf("둘 중 더 큰 값은 %lf",larger(a,b)); 
+}
+
+//실수(double) 입력받아 절댓값 출력
+double absolute(double x){
+     if (x< 0)
+          return -x;
+     else 
+          return x;
+          
+}
+
+
+//정수를 인수로 받아 소수이면 1 반환, 소수가 아니면 0 반환하는 함수
+int isprime(int n){
+     int count = 0;
+     for (int i = 1;i <= n;i++){
+          if (n % i)
+               count += 1;
+     
+     }
+     if (count == 2)
+          return 1;
+     else
+          return 0;
+}
+
+void PrintSum(int from, int to){  //void는 반환값이 없음을 의미
+     int sum = 0;
+     for (int i =1; i <= to; i++)
+          sum += i;
+     printf("%d~%d = %d\n",from,to,sum);
+}
+
+int main(){
+     PrintSum(1,100);
+     PrintSum(5,10);
+}
+
+//p.215 시험 나옴!!!
+// 분할 컴파일도 시험 주의
+
+
+void PrintSum(int from, int to); //함수 원형(펑션 프로토타입) ;를 통해 구별
+//바디 없이 가이드 주는 느낌
+//원형을 먼저 선언하면 함수 정의가 main(호출부)보다 뒤에 있어도 상관없음
+
+
+
