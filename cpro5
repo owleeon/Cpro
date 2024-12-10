@@ -1,0 +1,192 @@
+#include <stdio.h>
+
+//3번째 코드를 위한것(실행환경 VS)
+// #include <windows.h>
+// #include <time.h>
+
+// #define randomize() srand((unsigned)time(NULL))
+// #define random(n) (rand() % (n))
+// #define delay(n) Sleep(n)
+// #define clrscr() system("cls")
+// #define gotoxy(x,y) { COORD Cur = {x, y}; \
+// 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE),Cur);}
+// #define showcursor(bShow) { CONSOLE_CURSOR_INFO CurInfo = {20, bShow}; \
+// 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE),&CurInfo); }
+
+
+
+
+
+int main() {
+     
+     for (int i=1;i<=9;i++)
+     printf("%d X %d =%d\n",2,i,2*i);
+    
+   for (int i=1;i<=9;i++)
+     printf("%d X %d =%d\n",3,i,3*i);
+    
+   for (int i=1;i<=9;i++)
+     printf("%d X %d =%d\n",4,i,4*i);
+  
+   for (int i=1;i<=19;i++)
+     for(int x=1;x<=9;x++)
+       printf("%d X %d = %d\n",i,x,x*i);
+    
+  
+        
+     for (int i=9;i>=1;i--)
+       for(int x=9;x>=1;x--)
+         printf("%d X %d = %d\n",i,x,x*i);
+     
+     
+     
+     
+     gotoxy(34, 1);
+     puts("ASCII Table");
+     int ch = ' ';
+     for (int x = 5; x < 80; x += 15)
+          for (int y = 3; y <= 21; y++) {
+          gotoxy(x, y);
+          printf("%3d %d %c", ch, ch, ch);
+          ch++;
+          }
+
+
+
+     문자열도 ++형식이 가능하다
+     for (char ch='a';ch <='z';ch++)
+          printf("%c\n",ch);
+     
+     char ch='a';
+     while (ch <='z'){
+          printf("%c\n",ch);
+          ch++;
+          
+     }
+     
+  
+  
+     
+     int sum = 0;
+     int i =1;
+     while (i<= 100){
+          sum += 1;
+          i++;
+     }
+  
+  
+  
+  
+  
+     int sum = 0;
+     for (int i=1;i<=100;i++)
+          sum +=1;
+
+     printf("%d",sum);
+     
+     
+     
+     
+     
+     int num;
+     int sum,count = 0;
+
+     do{
+          printf("정수를 입력하세요(끝낼때는0):");
+          scanf("%d",&num);
+          sum += num;
+          count += 1;
+     }while (num != 0);
+
+     printf("총합은 %d입니다,평균은 %f입니다",sum,(float)sum/(count-1));
+     
+     
+     
+     
+     int sum =0;
+  for(int i =0; i <= 100;i++)
+    if (i % 3 == 0)
+      sum += i;
+
+  printf("3의 배수의 합은 %d",sum);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+     int a ;
+     do{
+          printf("문자를 입력하십시오:");
+          scanf("%d",&a);
+    
+     }while(a<1 || a> 10);
+     printf("%d",a);
+
+
+/////////////////////////////////////////
+
+  int su,yaksu;
+  do{
+    printf("자연수를 입력하십시오:");
+    scanf("%d",&su);
+    
+  }while(su< 1);
+  
+  for (int i =1;i <=su;i++)
+    if (su % i ==0){
+      yaksu = i;
+      printf("%d\n",yaksu);
+      
+      
+    }
+     
+     
+     
+     
+     
+///별찍기 응용
+for (int a =1;a <=9;a++){
+    for (int b=9;b>=a;b--){
+      printf("%d",b);
+    
+    }
+    puts(" ");
+  }         
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  int su;
+  int count =0;
+  
+  do{
+    printf("자연수를 입력하십시오:");
+    scanf("%d",&su);
+
+  }while(su< 1);
+
+  for (int i =1;i <=su;i++)
+    if (su % i ==0){
+      count += 1;
+  
+    }
+  printf("약수의 개수는:%d\n",count);
+  if (count == 2)
+    printf("소수입니다");
+  
+  
+  
+  
+}
