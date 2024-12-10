@@ -1,0 +1,136 @@
+#include <stdio.h>
+
+void Countdown(int n){
+     printf("%d",n);
+     if (n > 0) Countdown(n-1);
+}
+
+void Countup(int n){
+     if (n>0) counup(n-1);
+     printf("%d",n);
+}
+int main() {
+    printf("%d",Countdown)
+}
+
+
+
+
+
+
+int fibo(int n){
+     if (n == 0) return 0;
+     else if (n == 1) return 1;
+     else if (n > 1) return fibo(n-2) + fibo(n-1);
+}
+int main(){
+     printf("%d",fibo(3));
+}
+
+
+
+
+
+int su(int n) {   //4 3 2 1
+    if (n / 10 > 0) {
+        printf("%d\n",n % 10);
+        return su(n / 10);
+    }
+}
+int main(){
+    printf("%d",su(12345));
+}
+
+
+// 시험 출제 100%
+// 값 호출: 실인수의 값을 전달한다. 형식 인수를 바꿔도 실인수에는 영향을 주지 않는다
+// 주소값 호출: 변수의 번지를 전달한다. 형식 인수를 바꾸면 실인수가 영향을 받는다
+
+
+
+
+
+int main(){
+    int a =1 , b =2 , temp;
+    printf("a = %d, b = %d\n",a,b);
+    temp = a;  //두 변수의 값을 교환하려면 별도의 변수(temp)가 필요
+    a =b;
+    b =temp;
+    printf("a = %d, b = %d\n",a,b);
+}
+
+
+
+
+
+
+//왜 안바뀔까??
+void swap(int x, int y) {
+    int temp = x;
+    x =y;
+    x =temp;
+    
+}
+int main(){
+    int a =1 , b =2 , temp;
+    printf("a = %d, b = %d\n",a,b);
+    swap(a,b); //실인수의 값을 형식인수에 전달(복사)한다(함수가 값을 복사해간거지 값을 바꾼게 아님)
+    printf("a = %d, b = %d\n",a,b);
+}
+
+
+//여기에 포인터 개념을 사용해보자 (주소를 찾아가 값을 직접 바꾼다)
+//변수 선언(지역변수, 형식인수 등)시 int *x;
+//*는 포인터(주소값을 가지는)변수임을 의미
+//변수 사용시 *x = *y
+
+void swap_addr(int *x, int *y) { //변수 선언시 앞에 있는 별표는 포인터 변수임을 의미
+    int temp = *x;
+    *x =*y;
+    *x =temp;
+}
+int main(){
+    int a =1 , b =2 ;
+    printf("a = %d, b = %d\n",a,b);
+    swap_addr(&a,&b); //값 저장
+    printf("a = %d, b = %d\n",a,b);
+}
+
+//p.224 참조 호출 아니니까 무시하기. 참조 호출이라 쓰면 감점;
+//p.225 실인수의 값은 절대 못바꿈.(실인수가 가르키는 값을 바꾼것.)
+
+
+
+
+
+//두 함수의 합과 곱을 계산하는 함수
+void add_multiply(int x, int y, int *padd, int *pmul){
+    *padd = x + y;
+    *pmul = x * y;
+    
+}
+
+int main(){
+    int a =1, b =2, add, mul;
+    add_multiply(a,b,&add,&mul);
+    printf("%d %d\n",add, mul);
+}
+
+ 
+//반환값은 성공(1) 실패(0) //이거 다시 풀어야함 !!
+int divide(int x, int y, int *pdiv){
+    
+    if (y == 0) return 0;
+    else {
+        return 1;
+    }
+}
+int main(){
+     int a, b, div;
+     printf("정수:"); scanf("%d",&a);
+     printf("정수:"); scanf("%d",&b);
+     if (divide(a,b,&div))
+          printf("%d / %d =%d",a,b,div);
+     else
+          printf("0으로 나눌 수 없음\n");
+}
