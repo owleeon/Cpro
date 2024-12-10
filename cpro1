@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+  char code;
+  printf("문자 입력:");
+  scanf("%c", &code);
+  printf("문자 코드 : %d\n", code);
+
+  char str[5]; //문자 100개를 저장 할 수 있는 배열. 배열 자체가 주소
+  printf("문자열 입력:");
+  scanf("%s", str);
+  printf("문자열 : %s\n", str);
+  enum {MON,TUE,WED,THU,FRI,SAT,SUN} day;
+  day = TUE;
+  printf("day: %d\n", day);
+
+  int score[5];   //배열 선언: 타입 배열이름[크기]
+  score[0] = 100; //배열이름[첨자]
+  score[1] = 100;
+  score[2] = 200;
+  score[3] = 300;
+  score[4] = 400;
+  printf("%d %d %d %d %d\n", score[0], score[1], score[2], score[3], score[4]);
+}
