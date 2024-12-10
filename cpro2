@@ -1,0 +1,92 @@
+#include <stdio.h>
+
+int main() {
+     int value = 38;
+     int *pi;
+     int *pi2;
+     pi = &value; //포인터 변수 pi에 value의 주소를 저장
+     printf("%d %d %lu\n",value,*pi,pi);
+    
+     printf("%d %d %lu\n",value,*pi,pi);
+     pi2 =pi;
+     printf("%d %d %lu\n",value,*pi2,pi2);
+    
+    
+    
+     int value1 = 38, value2;
+     int *pi;
+     pi = &value1;
+     *pi = 40;
+     value2 = *pi;
+     printf("value1 = %d , value2 =%d \n",value1,value2);
+    
+    
+    double pie = 3.14;
+    printf("1234567890\n");
+    printf("%f \n",pie);
+    printf("%10f\n",pie);
+    printf("%2f\n",pie);
+    printf("%10.2f\n",pie);
+
+     
+     
+     int age;
+     float height;
+     char name[32];
+     printf("나이 키 이름: ");
+     scanf("%d %f %s",&age,&height,name);
+     printf("%d %.2fcm %s\n",age,height,name);
+     
+     
+     
+     
+     int input;
+     printf("2 + 3 =");
+     scanf("%d",&input);
+     
+     if (input == 5){
+          printf("정답\n");
+          printf("축하\n");
+     }
+     else if{
+          printf("ㄴㄴㄴㄴㄴㄴㄴ");
+          
+     }
+     else{
+          printf("오답\n");
+          printf("retry\n");
+     }
+     
+     
+     
+     
+     
+     
+     성별을 나타내는 문자를 입력받아 m이면 남성 f이면 여성 둘 다 아니면 m 또는 f 입력을 출력
+     wrong
+     int input;
+     char sname;
+     printf("m 또는 f입력: ");
+     scanf(%s,&sname);
+     if (sname == m){
+          printf("남성");
+     }
+     else if(sname == f){
+          printf("여성");
+     }
+     else{
+          printf("m또는 f를 입력");
+     }
+     
+     char input;
+     printf("성별입력:");
+     scanf(%c,&input);
+     
+     if (input == 'f' || input =='F')
+          printf("여성\n");
+     else if input("")
+     
+     
+   
+ 
+}
