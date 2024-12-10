@@ -1,0 +1,207 @@
+#include <stdio.h>
+
+int main(){
+    int arScore[5];
+    int sum = 0;
+    
+    for (int i =0; i < 5; i++){
+        printf("%d번 성적 : ", i+1);
+        scanf("%d",&arScore[i]);
+        sum += arScore[i];
+        
+    }
+    printf("\n총점 = %d, 평균 = %.2f\n",sum,sum/5.0);
+    //입력 받은 점수를 모두 출력
+    for (int j =1; j <= 5; j++){
+        printf("학생 %d    %d\n",j,arScore[j-1]);
+    }
+}
+
+
+
+
+//배열 초기화
+int main(){
+    int arScore[100] = {0};  // 100개의 배열 0으로 다 초기화
+    for (int i = 0; i < 100; i++)
+        printf("%d\n",arScore[i]);
+}
+
+//0이 아닌 특정값으로 초기화 하려면 반복문 사용
+
+//모든 요소 1로 초기화
+int main(){
+    int arScore[100];
+    for (int i = 0; i < 100; i++){
+         arScore[i] = 1;
+         printf("%d\n",arScore[i]);
+    }
+}
+
+
+
+
+//5개의 요소를 가지는 정수배열 선언
+//반복문으로 5개 정수를 입력받아 배열에 저장
+//가장 큰 값,작은 값을 구하여 출력
+int main(){
+    int arScore[5];
+    int best = 0;
+    int small = arScore[0];
+    for (int i = 0; i < 5; i++){
+        printf("정수를 입력하시오:");
+        scanf("%d",&arScore[i]);
+        if (arScore[i] > best) 
+            best = arScore[i];
+        else if (arScore[i] < small) 
+            small = arScore[i];
+    }
+    printf("가장 큰 값:%d\n",best);
+    printf("가장 작은 값:%d\n",small);
+}
+
+
+
+
+
+
+int main(){
+    int ar[5], maxIndex, minIndex;
+    for (int i = 0; i < 5; i++){
+        printf("정수를 입력하시오:");
+        scanf("%d",&arScore[i]);
+        
+    }
+    maxIndex = minIndex = 0;
+    for (int i = 0; i < 5; I++){
+        if (ar[i] > ar[maxIndex])
+            maxIndex = i;
+        else if (ar[i] < ar[minIndex])
+            minIndex = i;
+    }
+    printf("max = %d, min =%d\n",ar[maxIndex],ar[minIndex]);
+}
+
+
+#include <stdlib.h> //rand, srand 함수
+#include <time.h>   //time 함수  
+//srand: rand함수에 사용될 수를 초기화. 이 초기화를 매개변수로 받는 seed 값을 이용해 함
+//rand 함수는 내부적으로 어떤 srand의 매개변수로 들어온 seed 값과 매칭되는 숫자가 정해집니다. 그래서 seed 값에 의해서 rand 함수의 결과값이 변할 수 있다.
+int main(){
+    srand(time(0));             
+    for (int i =0; i < 6;i++)
+        printf("%d",rand());
+    printf("\n")    
+}
+
+//주사위 굴리기
+int main(){
+    
+    int faceCount[6] = {0};
+    for (int i =0; i < 10000;i++){
+        int face = rand() % 6;
+        faceCount[face]++;
+    }
+    for (int i =0; i < 6;i++){
+        printf("%d\t%d\n", i + 1, faceCount[i]);
+    }
+
+}
+
+
+
+
+//로또
+int main(){
+    int lotto[45] = {0}, count = 0;
+    
+    do{
+        int number = rand() % 45;
+        if (lotto[number] == 0) {
+            lotto[number] =1;
+            count++;
+        }
+        
+    }while (count < 6);
+    printf("당첨 번호: ");
+    for (int i = 0; i < 45; i++){
+        if (lotto[i] == 1)
+            printf("%d  ",i+1);
+    }
+    
+}
+
+
+
+
+//p.327-13 0~10 사이의 난수 100만개를 생성하되 각 숫자가 몇 번 나오는지 기록.
+//출현 횟수를 출력
+int main(){
+    int ssu[100] = {0}, count = 0;
+    
+    for (int i =0; i <= 1000000; i++){
+        int su = rand() % 11;
+        ssu[su]++;
+    }
+    
+    for (int i =0; i<=11; i++){
+        printf("%d\t%d\n", i , ssu[i]);
+    }
+    
+    
+}
+
+
+
+//2차원 배열
+int main(){
+    int arScore[3][4]= {
+        {92, 88, 76, 100},
+        {88,74,98,50},
+        {66,77,94,70},
+    };
+    
+    for (int c = 0; c < 3; c++){
+        int sum =0;
+        for (int s = 0; s < 4; s++){
+            sum += arScore[c][s];
+        }
+        printf("%d반: 총점 = %d점, 평균 =%.2f점\n",c+1,sum,sum/4.0);
+    }
+    
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+//미완성!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//과목 3개 학생 4명. 학생별 총점, 평균 출력해보기
+int main(){
+    int arScore[3][4]= {
+        {92, 88, 76, 100},
+        {88,74,98,50},
+        {66,77,94,70},
+    };
+    
+    int sum = 0;
+    for (int c = 0; c < 4; c++){
+        int s =0;
+        sum += arScore[c][s];
+        
+        printf("%d학생: 총점 = %d점, 평균 = %.2f점\n",c+1,sum,sum/4.0);
+    }
+    
+    
+}
+
+
+
+
